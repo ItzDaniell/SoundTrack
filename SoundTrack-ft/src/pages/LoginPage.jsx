@@ -37,7 +37,10 @@ const LoginPage = () => {
       </div>
       <article className="w-1/2 flex flex-col p-8 items-center justify-center gap-6">
         <h2 className="font-bold text-4xl">Iniciar Sesión</h2>
-        <p className="text-center w-3/4">Bienvenido, ingresa tu email y contraseña para comenzar a usar SoundTrack</p>
+        <p className="text-center w-3/4 text-sm text-gray-700">
+          Bienvenido, ingresa tu email y contraseña para comenzar a usar
+          SoundTrack
+        </p>
         <form action="" className="flex flex-col w-96">
           <div className="flex flex-col gap-4">
             <TextField
@@ -45,24 +48,26 @@ const LoginPage = () => {
               label="Email"
               variant="filled"
               sx={{
-                backgroundColor: 'white',
+                backgroundColor: "white",
                 borderRadius: 2,
-                '& .MuiFilledInput-root': {
+                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
+                "& .MuiFilledInput-root": {
                   borderRadius: 2,
-                  backgroundColor: 'white',
-                  '&:before': { borderBottom: 'none' },
-                  '&:hover:before': { borderBottom: 'none' },
-                  '&:hover:after': { borderBottom: 'none' },
-                  '&:after': {
-                    borderBottom: 'none', // azul
+                  backgroundColor: "white",
+                  "&:before": { borderBottom: "none" },
+                  "&:hover:before": { borderBottom: "none" },
+                  "&:hover:after": { borderBottom: "none" },
+                  "&:after": {
+                    borderBottom: "none", // azul
+                    color: "#1f2937"
                   },
-                  '& input::placeholder': {
-                    color: '#6b7280',
+                  "& input::placeholder": {
+                    color: "#6b7280",
                     opacity: 1,
                   },
                 },
-                '& .MuiInputLabel-root': {
-                  color: '#6b7280',
+                "& .MuiInputLabel-root": {
+                  color: "#6b7280",
                 },
               }}
             />
@@ -70,29 +75,33 @@ const LoginPage = () => {
               variant="filled"
               fullWidth
               sx={{
-                backgroundColor: 'white',
+                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
+                backgroundColor: "white",
                 borderRadius: 2,
-                '& .MuiFilledInput-root': {
+                "& .MuiFilledInput-root": {
                   borderRadius: 2,
-                  backgroundColor: 'white',
-                  '&:before': { borderBottom: 'none' },
-                  '&:hover:before': { borderBottom: 'none' },
-                  '&:after': {
-                    borderBottom: 'none', // azul (Tailwind blue-500)
+                  backgroundColor: "white",
+                  "&:before": { borderBottom: "none" },
+                  "&:hover:before": { borderBottom: "none" },
+                  "&:after": {
+                    borderBottom: "none", // azul (Tailwind blue-500)
+                    color: "#1f2937"
                   },
-                  '& input': {
-                    color: '#1f2937', // texto (Tailwind gray-800)
+                  "& input": {
+                    color: "#1f2937", // texto (Tailwind gray-800)
                   },
                 },
-                '& .MuiInputLabel-root': {
-                  color: '#6b7280', // label (Tailwind gray-500)
+                "& .MuiInputLabel-root": {
+                  color: "#6b7280", // label (Tailwind gray-500)
                 },
               }}
             >
-              <InputLabel htmlFor="filled-adornment-password">Contraseña</InputLabel>
+              <InputLabel htmlFor="filled-adornment-password">
+                Contraseña
+              </InputLabel>
               <FilledInput
                 id="filled-adornment-password"
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -107,25 +116,37 @@ const LoginPage = () => {
                 }
               />
             </FormControl>
-            <p className="text-end">¿No tienes una cuenta? <a href="#">Registrate</a></p>
-            <Button type="submit" customClass="bg-red-500 font-bold text-white" >
+            <p className="text-end mb-5 text-sm text-gray-500">
+              ¿No tienes una cuenta? <a href="#" className="text-blue-500 font-bold">Registrate Ahora</a>
+            </p>
+            <Button type="submit" customClass="bg-red-500 font-bold text-white shadow-xl">
               Ingresar
             </Button>
-            <p className="text-center">O puedes continuar con</p>
-            <div className="flex w-full gap-6 justify-center">
-              <Button customClass="bg-red-300 w-15 h-15">
-                <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="Icono de Google" />
-              </Button>
-              <Button customClass="bg-red-300 w-15 h-15">
-                <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Icono de Facebook" />
-              </Button>
-              <Button customClass="bg-red-300 w-15 h-15">
-                <img src="https://img.icons8.com/?size=100&id=22989&format=png&color=000000" alt="Icono de Microsoft" />
-              </Button>
-            </div>
           </div>
         </form>
-        <footer></footer>
+        <footer className="flex flex-col gap-4">
+          <p className="text-center text-sm text-gray-500">O puedes continuar con</p>
+          <div className="flex w-full gap-6 justify-center">
+            <Button customClass="bg-white w-15 h-15 shadow-xl">
+              <img
+                src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000"
+                alt="Icono de Google"
+              />
+            </Button>
+            <Button customClass="bg-white w-15 h-15 shadow-xl">
+              <img
+                src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000"
+                alt="Icono de Facebook"
+              />
+            </Button>
+            <Button customClass="bg-white w-15 h-15 shadow-xl">
+              <img
+                src="https://img.icons8.com/?size=100&id=22989&format=png&color=000000"
+                alt="Icono de Microsoft"
+              />
+            </Button>
+          </div>
+        </footer>
       </article>
     </main>
   );
