@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const Button = ({
   type = "button",
-  className = "",
+  customClass = "",
   onClick,
   disabled = false,
   children,
@@ -11,7 +11,7 @@ const Button = ({
   return (
     <button
       type={type}
-      className={`px-4 py-2 text-black rounded border-1 border-solid cursor-pointer ${className}`}
+      className={`px-4 py-2 text-black rounded cursor-pointer ${customClass}`}
       onClick={onClick}
       disabled={disabled}
       {...rest}
