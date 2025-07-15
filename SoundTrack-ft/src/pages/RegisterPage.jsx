@@ -39,8 +39,7 @@ const RegisterPage = () => {
       <article className="w-1/2 flex flex-col p-8 items-center justify-center gap-6">
         <h2 className="font-bold text-4xl">Registrarse</h2>
         <p className="text-center w-3/4 text-sm text-gray-700">
-          Bienvenido, ingresa tu email y contraseña para comenzar a usar
-          SoundTrack
+          ¡Hola, obtendrás todos los beneficios de Sountrack al registrarte!
         </p>
         <form action="" className="flex flex-col w-96">
           <div className="flex flex-col gap-4">
