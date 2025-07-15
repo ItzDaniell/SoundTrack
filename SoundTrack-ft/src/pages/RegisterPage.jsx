@@ -12,7 +12,7 @@ import Button from "../components/Button";
 import FilledInput from "@mui/material/FilledInput";
 import { Link } from "react-router-dom";
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -37,7 +37,7 @@ const LoginPage = () => {
         </div>
       </div>
       <article className="w-1/2 flex flex-col p-8 items-center justify-center gap-6">
-        <h2 className="font-bold text-4xl">Iniciar Sesión</h2>
+        <h2 className="font-bold text-4xl">Registrarse</h2>
         <p className="text-center w-3/4 text-sm text-gray-700">
           Bienvenido, ingresa tu email y contraseña para comenzar a usar
           SoundTrack
@@ -98,7 +98,7 @@ const LoginPage = () => {
               }}
             >
               <InputLabel htmlFor="filled-adornment-password">
-                Contraseña
+                Escriba la contraseña
               </InputLabel>
               <FilledInput
                 id="filled-adornment-password"
@@ -117,48 +117,68 @@ const LoginPage = () => {
                 }
               />
             </FormControl>
+            <FormControl
+              variant="filled"
+              fullWidth
+              sx={{
+                boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
+                backgroundColor: "white",
+                borderRadius: 2,
+                "& .MuiFilledInput-root": {
+                  borderRadius: 2,
+                  backgroundColor: "white",
+                  "&:before": { borderBottom: "none" },
+                  "&:hover:before": { borderBottom: "none" },
+                  "&:after": {
+                    borderBottom: "none", // azul (Tailwind blue-500)
+                    color: "#1f2937",
+                  },
+                  "& input": {
+                    color: "#1f2937", // texto (Tailwind gray-800)
+                  },
+                },
+                "& .MuiInputLabel-root": {
+                  color: "#6b7280", // label (Tailwind gray-500)
+                },
+              }}
+            >
+              <InputLabel htmlFor="filled-adornment-password">
+                Repita la contraseña
+              </InputLabel>
+              <FilledInput
+                id="filled-adornment-password"
+                type={showPassword ? "text" : "password"}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={handleClickShowPassword}e
+                      onMouseDown={handleMouseDownPassword}
+                      onMouseUp={handleMouseUpPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
             <p className="text-end mb-5 text-sm text-gray-500">
-              ¿No tienes una cuenta?{" "}
-              <Link className="text-blue-500 font-bold" to="/register">
-                Registrase ahora
+              ¿Ya tienes una cuenta?{" "}
+              <Link className="text-blue-500 font-bold" to="/">
+                Inicia sesión ahora
               </Link>
             </p>
             <Button
               type="submit"
               customClass="bg-red-500 font-bold text-white shadow-xl"
             >
-              Ingresar
+              Crear cuenta
             </Button>
           </div>
         </form>
-        <footer className="flex flex-col gap-4">
-          <p className="text-center text-sm text-gray-500">
-            O puedes continuar con
-          </p>
-          <div className="flex w-full gap-6 justify-center">
-            <Button customClass="bg-white w-15 h-15 shadow-xl">
-              <img
-                src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000"
-                alt="Icono de Google"
-              />
-            </Button>
-            <Button customClass="bg-white w-15 h-15 shadow-xl">
-              <img
-                src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000"
-                alt="Icono de Facebook"
-              />
-            </Button>
-            <Button customClass="bg-white w-15 h-15 shadow-xl">
-              <img
-                src="https://img.icons8.com/?size=100&id=22989&format=png&color=000000"
-                alt="Icono de Microsoft"
-              />
-            </Button>
-          </div>
-        </footer>
       </article>
     </main>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
